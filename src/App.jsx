@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState("名前入力");
+  const [email, setEmail] = useState("メールアドレス入力");
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  useEffect(() => {
+    // この中に書きます🤗
+    // この下は消さない
+
+    console.log("コンポーネントがマウントされました");
+  }, []);
+
+  console.log("コンポーネントがレンダリングされました");
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <p>名前が入ります</p>
+        <input type="text" value={name} placeholder="名前を入力してください" onChange={handleNameChange} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div>メールアドレスが入ります</div>
+      <input type="text" value={email} placeholder="メールアドレスを入力してください" onChange={handleEmailChange} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
