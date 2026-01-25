@@ -11,7 +11,14 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.16.0",
+    "@mui/material": "^5.16.0",
+    "@mui/x-charts": "^7.9.0",
+    "react-calendar": "^5.0.0",
+    "react-router-dom": "^6.24.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -22,6 +29,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "sass-embedded": "^1.97.2",
     "vite": "^7.2.4"
   }
 }

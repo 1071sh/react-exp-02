@@ -1,35 +1,20 @@
-import { useState, useEffect } from "react";
-import "./App.css";
+import Chart from "./pages/chart";
+import Home from "./pages/home";
+import Customer from "./pages/customer";
+import Orders from "./pages/orders";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NotFound from "./pages/notfound";
 
 function App() {
-  const [name, setName] = useState("名前入力");
-  const [email, setEmail] = useState("メールアドレス入力");
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  useEffect(() => {
-    // この中に書きます🤗
-    // この下は消さない
-
-    console.log("コンポーネントがマウントされました");
-  }, []);
-
-  console.log("コンポーネントがレンダリングされました");
-
   return (
     <>
-      <div>
-        <p>名前が入ります</p>
-        <input type="text" value={name} placeholder="名前を入力してください" onChange={handleNameChange} />
-      </div>
-      <div>メールアドレスが入ります</div>
-      <input type="text" value={email} placeholder="メールアドレスを入力してください" onChange={handleEmailChange} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/chart" element={<Chart />} />
+        <Route path="/customer" element={<Customer />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
