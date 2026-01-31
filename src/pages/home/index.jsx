@@ -1,23 +1,14 @@
-import React, { useState } from "react";
 import styles from "./style.module.scss";
 import Header from "../../layout/Header";
 import SideBar from "../../layout/SideBar";
 import News from "../../components/News";
 import CalendarItem from "../../components/CalendarItem";
+import useForm from "../../hooks/useForm";
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  const { data } = useForm();
 
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-      console.log("response", response);
-      const json = await response.json();
-      console.log("json", json);
-      setData(json);
-    };
-    fetchData();
-  }, []);
+  // console.log("data", data);
 
   return (
     <>
